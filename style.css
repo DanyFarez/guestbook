@@ -1,0 +1,214 @@
+/* style.css */
+
+/* --- GLOBAL RESET --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(135deg, #1e0533, #110e2e, #000000);
+    min-height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Aligns to top for scrolling */
+    padding: 40px 20px;
+}
+
+/* --- RESPONSIVE CONTAINER --- */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* Responsive Width Logic */
+    width: 100%; 
+    max-width: 500px; 
+    
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    font-size: 2rem;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p.subtitle {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+/* --- FORM ELEMENTS --- */
+label { display: block; margin-bottom: 8px; font-weight: 500; color: #ddd; }
+
+input[type="text"], textarea {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid #444;
+    color: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    font-family: inherit;
+    
+    /* Prevents auto-zoom on iPhone */
+    font-size: 16px; 
+    
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus, textarea:focus {
+    outline: none;
+    border-color: #00c6ff;
+    box-shadow: 0 0 10px rgba(0, 198, 255, 0.3);
+}
+
+/* --- CAMERA BUTTON STYLES --- */
+#media-upload { display: none; } /* Hide default input */
+
+.custom-file-upload {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 15px; /* Larger tap area for mobile */
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    cursor: pointer;
+    color: #aaa;
+    transition: 0.3s;
+    background: rgba(255, 255, 255, 0.02);
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.custom-file-upload:hover {
+    border-color: #00c6ff;
+    color: #fff;
+    background: rgba(0, 198, 255, 0.1);
+}
+
+button {
+    width: 100%;
+    padding: 16px; /* Larger tap area */
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 114, 255, 0.4);
+}
+
+/* --- FEED SECTION --- */
+.feed-header {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: 0.3s;
+    position: relative; 
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    min-width: 45px; /* Ensures it doesn't squish on small phones */
+    border-radius: 50%;
+    margin-right: 15px;
+    background: #222;
+}
+
+.content { 
+    width: 100%; 
+    overflow: hidden; /* Prevents overflow on small screens */
+}
+
+.content h4 {
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.content p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    word-wrap: break-word; /* Breaks long words so they fit */
+}
+
+/* --- MEDIA (Image/Video) RESIZING --- */
+.post-media {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.content span {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.75rem;
+    color: #00c6ff;
+    font-weight: 500;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #ff4444;
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    padding: 5px; /* Easier to tap */
+}
+
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* --- MOBILE TWEAKS --- */
+@media (max-width: 600px) {
+    body { padding: 20px 10px; }
+    .glass-panel { padding: 20px; width: 100%; }
+    h2 { font-size: 1.6rem; }
+    .avatar { width: 40px; height: 40px; min-width: 40px; }
+    .custom-file-upload { padding: 12px; font-size: 0.9rem; }
+}
