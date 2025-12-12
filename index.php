@@ -2,10 +2,10 @@
 // --- 1. SETUP TIMEZONE & CONNECTION ---
 date_default_timezone_set("Asia/Kuala_Lumpur"); 
 
-$servername = "sql300.infinityfree.com";
-$username = "if0_40661777";
-$password = "2023859514";
-$dbname = "if0_40661777_guestbook";
+$servername = "";
+$username = "";
+$password = "";
+$dbname = "";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) { die("Connection failed: " . $conn->connect_error); }
@@ -388,4 +388,5 @@ $result = $conn->query($sql_get);
     </script>
 
 </body>
+
 </html>
